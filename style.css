@@ -18,3 +18,23 @@
   .laptop{width:440px;right:1vw}
   .screen{height:290px}
 }
+
+/* FIX 2: rechte Hero-Darstellung vollständig sichtbar */
+@media (min-width:1001px){
+  .hero{grid-template-columns:minmax(0,60%) minmax(0,40%);position:relative}
+  .copy{position:relative;z-index:3;padding-right:0}
+  .headline{width:76vw;gap:1.7vw}
+  .headline div{font-size:clamp(36px,3.9vw,60px)}
+  .visual{clip-path:none;overflow:visible;background:linear-gradient(140deg,#e3efff 0%,#b8d7ff 48%,#0a63d8 100%);position:relative;z-index:1}
+  .visual:before{content:"";position:absolute;left:-95px;top:0;width:130px;height:100%;background:#f7fbff;clip-path:polygon(0 0,100% 0,65% 100%,0 100%);z-index:2}
+  .beam{z-index:3}
+  .laptop{width:min(520px,35vw);right:3vw;bottom:50px;z-index:4;transform:perspective(1200px) rotateY(-4deg) rotateZ(-1deg)}
+  .screen{height:330px}
+}
+@media (min-width:1001px) and (max-width:1250px){
+  .hero{grid-template-columns:58% 42%}
+  .headline{width:72vw}
+  .headline div{font-size:clamp(33px,3.45vw,48px)}
+  .laptop{width:430px;right:2vw}
+  .screen{height:282px}
+}
