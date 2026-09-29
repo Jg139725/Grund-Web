@@ -1,12 +1,1 @@
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach((entry)=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{
-  if(el.closest('.claim')) el.style.transitionDelay = `${i * 70}ms`;
-  observer.observe(el);
-});
+const links=document.querySelectorAll('nav a');addEventListener('scroll',()=>{let id='start';document.querySelectorAll('main section[id]').forEach(s=>{if(scrollY>=s.offsetTop-180)id=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))});
