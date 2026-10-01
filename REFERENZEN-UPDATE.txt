@@ -1,0 +1,9 @@
+GRUND WEB – Referenzen Update
+
+Neu:
+- echte Referenzkarten für SpVgg Kaufbeuren und Taxi Erbas
+- Hover-Effekte
+- eigene Projektseiten projekt-svk.html und projekt-taxi-erbas.html
+- responsive Darstellung
+
+Einfach den INHALT dieses Pakets in dein GitHub-Repository hochladen und vorhandene Dateien ersetzen.

@@ -56,26 +56,23 @@
   .screen i{font-size:82px;top:75px;}
 }
 
-/* HERO FINAL 2026-10-01: Laptop bewusst unterhalb des Claims */
-@media (min-width:1001px){
-  .hero{grid-template-columns:minmax(0,62%) minmax(0,38%);min-height:610px;}
-  .copy{padding:62px 1vw 30px 4.5vw;z-index:6;}
-  .headline{width:69vw;gap:1.15vw;margin:35px 0 34px;position:relative;z-index:7;}
-  .headline div{font-size:clamp(34px,3.35vw,54px);}
-  .visual{overflow:visible;clip-path:none;z-index:1;}
-  .visual:before{clip-path:polygon(10% 0,100% 0,100% 100%,0 100%);}
-  .laptop{
-    width:min(335px,22vw);
-    right:2.8vw;
-    bottom:22px;
-    top:auto;
-    transform:perspective(1200px) rotateY(-2deg) rotateZ(-.4deg);
-    z-index:3;
-  }
-  .screen{height:218px;padding:18px;border-width:8px;}
-  .screen h3{font-size:24px;margin:40px 0 6px;}
-  .screen p{font-size:8px;}
-  .screen button{padding:8px 12px;font-size:8px;}
-  .screen i{font-size:68px;top:58px;right:-6px;}
-  .base{height:12px;}
-}
+
+/* ===== GRUND WEB: echte Referenzen ===== */
+.cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+.project-card{height:430px;border-radius:12px;position:relative;overflow:hidden;display:block;padding:32px;color:#fff;box-shadow:0 18px 55px rgba(10,35,70,.13);transition:transform .35s ease,box-shadow .35s ease}
+.project-card:hover{transform:translateY(-7px);box-shadow:0 26px 70px rgba(10,35,70,.20)}
+.project-svk{background:linear-gradient(145deg,rgba(5,15,28,.74),rgba(7,25,44,.95)),radial-gradient(circle at 72% 28%,#3d759a,#0b1c2a 55%,#06101b)}
+.project-svk:after{content:"";position:absolute;left:-8%;right:-8%;bottom:55px;height:6px;background:#e62f3c;transform:rotate(-5deg);box-shadow:0 18px 0 #fff2,0 36px 0 #e62f3c55}
+.project-taxi{background:radial-gradient(circle at 78% 60%,#d79528 0,#735019 15%,#161b20 42%,#07090c 78%)}
+.project-taxi:after{content:"TAXI";position:absolute;right:-20px;bottom:-15px;font-size:145px;font-weight:900;font-style:italic;color:#ffc627;opacity:.14;transform:rotate(-8deg)}
+.project-badge{position:absolute;right:24px;top:24px;border-radius:50px;background:#fff;color:#132033;padding:10px 14px;font-size:9px;font-weight:800;letter-spacing:.08em;z-index:3}
+.project-brand{font-size:28px;font-weight:900;font-style:italic;letter-spacing:-.06em;position:relative;z-index:2}
+.project-svk .project-brand{color:#fff}.project-svk .project-brand:after{content:"KAUFBEUREN";font-size:9px;letter-spacing:.12em;margin-left:10px;color:#e62f3c}
+.taxi-brand{color:#ffc627;line-height:.85}
+.project-overlay{position:absolute;left:32px;right:32px;bottom:32px;z-index:4}
+.project-overlay span{font-size:9px;letter-spacing:.17em;opacity:.65;font-weight:700}
+.project-overlay h3{font-size:48px!important;line-height:.88!important;letter-spacing:-.065em!important;margin:12px 0!important;color:#fff}
+.project-overlay p{max-width:430px;font-size:12px;line-height:1.55;color:#d8e0e9;margin:0 0 22px}
+.project-overlay strong{font-size:11px;color:#fff;border-bottom:1px solid #ffffff88;padding-bottom:5px}
+.project-taxi .project-overlay p{color:#ddd}
+@media(max-width:750px){.cards{grid-template-columns:1fr!important}.project-card{height:390px}.project-overlay h3{font-size:42px!important}}
