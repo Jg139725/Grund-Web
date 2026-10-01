@@ -55,3 +55,27 @@
   }
   .screen i{font-size:82px;top:75px;}
 }
+
+/* HERO FINAL 2026-10-01: Laptop bewusst unterhalb des Claims */
+@media (min-width:1001px){
+  .hero{grid-template-columns:minmax(0,62%) minmax(0,38%);min-height:610px;}
+  .copy{padding:62px 1vw 30px 4.5vw;z-index:6;}
+  .headline{width:69vw;gap:1.15vw;margin:35px 0 34px;position:relative;z-index:7;}
+  .headline div{font-size:clamp(34px,3.35vw,54px);}
+  .visual{overflow:visible;clip-path:none;z-index:1;}
+  .visual:before{clip-path:polygon(10% 0,100% 0,100% 100%,0 100%);}
+  .laptop{
+    width:min(335px,22vw);
+    right:2.8vw;
+    bottom:22px;
+    top:auto;
+    transform:perspective(1200px) rotateY(-2deg) rotateZ(-.4deg);
+    z-index:3;
+  }
+  .screen{height:218px;padding:18px;border-width:8px;}
+  .screen h3{font-size:24px;margin:40px 0 6px;}
+  .screen p{font-size:8px;}
+  .screen button{padding:8px 12px;font-size:8px;}
+  .screen i{font-size:68px;top:58px;right:-6px;}
+  .base{height:12px;}
+}
