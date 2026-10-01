@@ -1,0 +1,13 @@
+GRUND WEB – Preisupdate
+
+Neu:
+- Preisorientierung mit verständlichen Erklärungen
+- Onepage: ab 790 €
+- Business Website: ab 1.490 €
+- Business Plus: ab 2.490 €
+- Relaunch: ab 990 €
+- Individuelle Weblösungen: auf Anfrage
+- Pflege & Änderungen: ab 69 €/Std.
+- Hinweis, dass alle Preise Orientierungswerte sind
+
+Einfach alle Dateien dieses Pakets wie bisher in das GitHub-Repository hochladen/ersetzen.
