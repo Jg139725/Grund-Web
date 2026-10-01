@@ -1,0 +1,11 @@
+DIES IST DAS KOMPLETTE FIX-PAKET.
+
+Du musst danach NICHT noch weitere Fix-Dateien laden.
+
+1. ZIP entpacken.
+2. ALLE Dateien daraus in das Root-Verzeichnis deines GitHub-Repositories Grund-Web hochladen.
+3. Bei gleichnamigen Dateien ersetzen/überschreiben.
+4. Warten, bis GitHub Pages neu deployed hat.
+5. Seite neu öffnen. Durch die Versionsnummern an CSS/JS wird der alte Safari-Cache umgangen.
+
+Der Projektkarten-Fix steckt zusätzlich direkt in index.html, damit die Darstellung nicht mehr davon abhängt, ob GitHub die neue CSS-Datei sofort lädt.
