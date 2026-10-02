@@ -1,0 +1,11 @@
+Neu in diesem Paket:
+- Moderner 4-Schritte-Projektkonfigurator
+- Auswahl Website-Art und Kundentyp
+- Feld für bestehende Website
+- Funktionsauswahl und Projektbeschreibung
+- Kontaktdaten
+- FAQ-Bereich
+- Preis-Buttons führen direkt zur Projektanfrage
+
+WICHTIG:
+Der Konfigurator ist optisch und funktional eingebaut. Der echte Versand an ein E-Mail-Postfach ist bewusst noch nicht aktiviert, weil dafür die endgültige Empfängeradresse bzw. Versandlösung festgelegt werden muss.
