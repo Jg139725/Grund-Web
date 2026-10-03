@@ -62,7 +62,7 @@
 .gw-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.gw-nav{display:flex;justify-content:space-between;gap:12px;margin-top:28px}.gw-btn{border:0;border-radius:7px;padding:14px 19px;font-weight:850;cursor:pointer}.gw-next,.gw-submit{background:#1476ff;color:#fff;margin-left:auto}.gw-back{background:#eef2f7;color:#0c1830}.gw-submit{display:none}.gw-form-note{font-size:12px;color:#788397;margin-top:14px;line-height:1.5}.gw-url-wrap{display:none}
 .gw-faq{padding:105px 5%;background:#f4f7fb;color:#0c1830}.gw-faq-head{max-width:700px;margin-bottom:35px}.gw-faq-list{border-top:1px solid #d9e1eb}.gw-faq-item{border-bottom:1px solid #d9e1eb}.gw-faq-q{width:100%;border:0;background:transparent;text-align:left;padding:24px 0;font:inherit;font-size:19px;font-weight:850;color:#0c1830;display:flex;justify-content:space-between;gap:20px;cursor:pointer}.gw-faq-q b{color:#1476ff;font-size:24px}.gw-faq-a{display:none;max-width:820px;padding:0 0 24px;color:#5f6b7d;line-height:1.7}.gw-faq-item.open .gw-faq-a{display:block}.gw-faq-item.open .gw-faq-q b{transform:rotate(45deg)}
 .gw-consent{display:flex;align-items:flex-start;gap:10px;margin-top:18px;padding:14px 16px;border-radius:8px;background:#f6f9ff;border:1px solid #dce7f7;font-size:13px;line-height:1.5;color:#526076}.gw-consent input{margin-top:3px;accent-color:#1476ff}.gw-submit:disabled{opacity:.65;cursor:wait}.gw-mail{color:#1476ff;font-weight:800}.gw-field input:focus,.gw-field textarea:focus,.gw-field select:focus{outline:2px solid rgba(20,118,255,.18);border-color:#1476ff}.gw-option:focus-within{border-color:#1476ff}
-.gw-package-note{margin:-4px 0 18px;padding:14px 16px;border:1px solid #dce7f7;border-radius:9px;background:#f6f9ff;color:#526076;font-size:13px;line-height:1.55}.gw-package-note strong{color:#0c1830}.gw-included-badge{display:none;margin-left:auto;background:#e8f3ff;color:#0b68e8;border:1px solid #bddcff;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:850;letter-spacing:.03em}.gw-check.is-included{background:#f4f9ff;border-color:#a9cffd}.gw-check.is-included .gw-included-badge{display:inline-flex}.gw-check.is-included input{accent-color:#1476ff}.gw-check.is-included input:disabled{opacity:1}.gw-mini-badge{display:inline-block;background:#e8f3ff;color:#0b68e8;border:1px solid #bddcff;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:850;vertical-align:1px}.gw-check-text{min-width:0}
+.gw-package-note{margin:-4px 0 18px;padding:14px 16px;border:1px solid #dce7f7;border-radius:9px;background:#f6f9ff;color:#526076;font-size:13px;line-height:1.55}.gw-package-note strong{color:#0c1830}.gw-included-badge{display:none;margin-left:auto;background:#e8f3ff;color:#0b68e8;border:1px solid #bddcff;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:850;letter-spacing:.03em}.gw-check.is-included{background:#f4f9ff;border-color:#a9cffd}.gw-check.is-included .gw-included-badge,.gw-check.is-bonus-choice .gw-included-badge{display:inline-flex}.gw-check.is-bonus-choice .gw-included-badge{background:#fff8e8;color:#9a6500;border-color:#f0d28a}.gw-check.is-included input{accent-color:#1476ff}.gw-check.is-included input:disabled{opacity:1}.gw-mini-badge{display:inline-block;background:#e8f3ff;color:#0b68e8;border:1px solid #bddcff;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:850;vertical-align:1px}.gw-check-text{min-width:0}
 @media(max-width:720px){.gw-options,.gw-checks,.gw-two{grid-template-columns:1fr}.gw-request,.gw-faq{padding:75px 5%}.gw-form-shell{padding:24px 18px}.gw-nav{position:sticky;bottom:10px;background:#fff;padding-top:10px}.gw-btn{padding:13px 14px}}
 </style>
 
@@ -244,7 +244,7 @@ document.querySelectorAll('.external-site').forEach(function(btn){
  const packageIncludes={
   'Onepage':['Kontaktformular'],
   'Business Website':['Kontaktformular','Galerie','Team'],
-  'Business Plus':['Kontaktformular','Galerie','Team','News','Besondere / individuelle Funktion'],
+  'Business Plus':['Kontaktformular','Galerie','Team','News'],
   'Relaunch':[],
   'Noch nicht sicher':[]
  };
@@ -252,16 +252,24 @@ document.querySelectorAll('.external-site').forEach(function(btn){
  function applyPackageFeatures(){
   const type=document.getElementById('websiteArt').value;
   const included=packageIncludes[type]||[];
+  const bonusFeatures=['Login / Mitgliederbereich','Besondere / individuelle Funktion'];
   form.querySelectorAll('.gw-check[data-feature]').forEach(label=>{
    const cb=label.querySelector('input[type=checkbox]');
    const isIncluded=included.includes(label.dataset.feature);
    label.classList.toggle('is-included',isIncluded);
+   label.classList.toggle('is-bonus-choice',type==='Business Plus' && bonusFeatures.includes(label.dataset.feature));
+   let badge=label.querySelector('.gw-included-badge');
+   if(!badge){badge=document.createElement('span');badge.className='gw-included-badge';badge.textContent='Inklusive';label.insertBefore(badge,label.querySelector('.gw-info'));}
+   badge.textContent=isIncluded?'Inklusive':(type==='Business Plus' && bonusFeatures.includes(label.dataset.feature)?'1 davon inklusive':'Inklusive');
    if(isIncluded){cb.checked=true;cb.disabled=true;} else {if(cb.disabled)cb.checked=false;cb.disabled=false;}
   });
-  document.getElementById('gwIncludedFeatures').value=included.length?included.join(', '):'Keine pauschal festgelegt';
+  const selectedBonus=bonusFeatures.find(f=>{const el=form.querySelector('.gw-check[data-feature="'+f+'"] input');return el&&el.checked;});
+  const allIncluded=[...included]; if(type==='Business Plus'&&selectedBonus) allIncluded.push(selectedBonus+' (Bonus-Auswahl)');
+  document.getElementById('gwIncludedFeatures').value=allIncluded.length?allIncluded.join(', '):'Keine pauschal festgelegt';
   const note=document.getElementById('gwPackageNote');
   if(type==='Relaunch') note.innerHTML='<strong>Relaunch:</strong> Welche Funktionen bereits enthalten sind, hängt von deiner bestehenden Website und dem gewünschten Umfang ab.';
   else if(type==='Noch nicht sicher') note.innerHTML='<strong>Noch nicht sicher?</strong> Wähle einfach die Funktionen aus, die dir wichtig sind. Das passende Paket klären wir gemeinsam.';
+  else if(type==='Business Plus') note.innerHTML='<strong>Business Plus gewählt:</strong> Die markierten Standardfunktionen sind inklusive. Zusätzlich kannst du <strong>eine</strong> der beiden Optionen <strong>Login / Mitgliederbereich</strong> oder <strong>besondere / individuelle Funktion</strong> ohne Aufpreis auswählen.';
   else note.innerHTML='<strong>'+packageNames[type]+' gewählt:</strong> Mit <span class="gw-mini-badge">Inklusive</span> markierte Funktionen sind in diesem Paket bereits eingeplant. Weitere Wünsche kannst du zusätzlich auswählen.';
  }
  form.querySelectorAll('.gw-options').forEach(group=>group.querySelectorAll('.gw-option').forEach(opt=>opt.addEventListener('click',()=>{
@@ -272,6 +280,14 @@ document.querySelectorAll('.external-site').forEach(function(btn){
  function show(){steps.forEach((s,i)=>s.classList.toggle('active',i===cur));bars.forEach((b,i)=>b.classList.toggle('on',i<=cur));back.style.visibility=cur?'visible':'hidden';next.style.display=cur===steps.length-1?'none':'inline-block';submit.style.display=cur===steps.length-1?'inline-block':'none'}
  next.addEventListener('click',()=>{if(cur===0&&!document.getElementById('websiteArt').value){alert('Bitte wähle zuerst aus, was du umsetzen möchtest.');return}if(cur===1&&!document.getElementById('kundenTyp').value){alert('Bitte wähle aus, für wen die Website ist.');return}cur=Math.min(cur+1,steps.length-1);show()});
  back.addEventListener('click',()=>{cur=Math.max(cur-1,0);show()});
+ form.querySelectorAll('.gw-check[data-feature] input[type=checkbox]').forEach(cb=>cb.addEventListener('change',()=>{
+  if(document.getElementById('websiteArt').value==='Business Plus' && cb.checked){
+   const label=cb.closest('.gw-check');
+   const bonus=['Login / Mitgliederbereich','Besondere / individuelle Funktion'];
+   if(bonus.includes(label.dataset.feature)) form.querySelectorAll('.gw-check.is-bonus-choice input').forEach(other=>{if(other!==cb)other.checked=false;});
+  }
+  applyPackageFeatures();
+ }));
  document.getElementById('existingSite').addEventListener('change',e=>document.getElementById('urlWrap').style.display=e.target.value==='Ja'?'block':'none');
  form.addEventListener('submit',e=>{if(!form.reportValidity()){e.preventDefault();return}submit.disabled=true;submit.textContent='Anfrage wird gesendet …';});
  document.querySelectorAll('.gw-faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
