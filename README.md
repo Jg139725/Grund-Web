@@ -17,3 +17,10 @@ Dateien:
 - index.html
 - style.css
 - script.js
+
+
+## Rechtliches – Oktober 2026
+- Impressum und Datenschutz ergänzt
+- Footer verlinkt
+- Datenschutz-Hinweis am Anfrageformular ergänzt
+- Angaben basieren auf dem aktuellen Stand; bei Gewerbeanmeldung, Telefonnummer, USt-IdNr., Hosting- oder Formularwechsel aktualisieren.
