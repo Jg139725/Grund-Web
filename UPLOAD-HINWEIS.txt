@@ -1,0 +1,19 @@
+GRUND WEB – aktualisierte Version
+
+Neu:
+- Projektanfrage sendet an info@grund-web.com über FormSubmit
+- Danke-Seite nach erfolgreicher Anfrage
+- Pflicht-Einwilligung zur Verarbeitung der Anfrage
+- Kontaktadresse auf info@grund-web.com aktualisiert
+- SEO: Seitentitel, Meta-Beschreibung, Canonical und Social-Metadaten
+- Formular-Fokus, mobile Bedienung und Sende-Status verbessert
+
+WICHTIG NACH DEM UPLOAD:
+1. Alle Dateien auf GitHub hochladen, inklusive danke.html und CNAME.
+2. Auf grund-web.com eine Testanfrage absenden.
+3. Beim ERSTEN Versand schickt FormSubmit eine Aktivierungs-E-Mail an info@grund-web.com.
+4. Diese Aktivierungs-E-Mail bestätigen. Erst danach werden normale Anfragen weitergeleitet.
+5. Spam-Ordner prüfen, falls die Aktivierungs-E-Mail nicht sofort sichtbar ist.
+
+Hinweis Datenschutz:
+Der Formularversand läuft aktuell über den externen Dienst FormSubmit. Vor dem endgültigen öffentlichen Einsatz sollte dieser Dienst in der Datenschutzerklärung berücksichtigt werden.
