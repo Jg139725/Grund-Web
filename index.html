@@ -196,12 +196,12 @@
     <div class="gw-package-note" id="gwPackageNote"></div>
     <input type="hidden" name="Im-Paket-enthalten" id="gwIncludedFeatures" value="">
     <div class="gw-checks">
-     <label class="gw-check" data-feature="Kontaktformular"><input type="checkbox" name="Funktionen" value="Kontaktformular"> <span class="gw-check-text">Kontaktformular</span><span class="gw-included-badge">Inklusive</span></label>
-     <label class="gw-check" data-feature="Galerie"><input type="checkbox" name="Funktionen" value="Galerie"> <span class="gw-check-text">Bilder / Galerie</span><span class="gw-included-badge">Inklusive</span></label>
-     <label class="gw-check" data-feature="News"><input type="checkbox" name="Funktionen" value="News"> <span class="gw-check-text">News / Aktuelles</span><span class="gw-included-badge">Inklusive</span></label>
-     <label class="gw-check" data-feature="Team"><input type="checkbox" name="Funktionen" value="Team"> <span class="gw-check-text">Team / Mitarbeiter</span><span class="gw-included-badge">Inklusive</span></label>
+     <label class="gw-check" data-feature="Kontaktformular"><input type="checkbox" name="Funktionen" value="Kontaktformular"> <span class="gw-check-text">Kontaktformular</span><span class="gw-included-badge">Inklusive</span><span class="gw-info" tabindex="0" aria-label="Info zum Kontaktformular">i<span class="gw-info-tip">Ein Formular, über das Besucher direkt über die Website eine Anfrage senden können – zum Beispiel mit Name, E-Mail, Telefonnummer und Nachricht.</span></span></label>
+     <label class="gw-check" data-feature="Galerie"><input type="checkbox" name="Funktionen" value="Galerie"> <span class="gw-check-text">Bilder / Galerie</span><span class="gw-included-badge">Inklusive</span><span class="gw-info" tabindex="0" aria-label="Info zu Bilder und Galerie">i<span class="gw-info-tip">Ein eigener Bereich für Fotos und Bilder – zum Beispiel Projekte, Fahrzeuge, Referenzen, Räumlichkeiten oder Mannschaftsfotos.</span></span></label>
+     <label class="gw-check" data-feature="News"><input type="checkbox" name="Funktionen" value="News"> <span class="gw-check-text">News / Aktuelles</span><span class="gw-included-badge">Inklusive</span><span class="gw-info" tabindex="0" aria-label="Info zu News und Aktuelles">i<span class="gw-info-tip">Ein Bereich für Neuigkeiten, Beiträge oder aktuelle Meldungen, damit Besucher regelmäßig über Neues informiert werden können.</span></span></label>
+     <label class="gw-check" data-feature="Team"><input type="checkbox" name="Funktionen" value="Team"> <span class="gw-check-text">Team / Ansprechpartner</span><span class="gw-included-badge">Inklusive</span><span class="gw-info" tabindex="0" aria-label="Info zu Team und Ansprechpartnern">i<span class="gw-info-tip">Personen auf deiner Website vorstellen – zum Beispiel Mitarbeiter, Ansprechpartner, Trainer oder Vorstand mit Foto, Name und Funktion.</span></span></label>
      <label class="gw-check" data-feature="Login / Mitgliederbereich"><input type="checkbox" name="Funktionen" value="Login / Mitgliederbereich"> <span class="gw-check-text">Login / Mitgliederbereich</span> <span class="gw-info" tabindex="0" aria-label="Info zu Login und Mitgliederbereich">i<span class="gw-info-tip">Geschützte Inhalte für Kunden, Mitarbeiter oder Mitglieder – zum Beispiel ein Mitarbeiterportal, Mitgliederbereich oder interne Dokumente.</span></span></label>
-     <label class="gw-check" data-feature="Besondere / individuelle Funktion"><input type="checkbox" name="Funktionen" value="Besondere / individuelle Funktion"> <span class="gw-check-text">Besondere / individuelle Funktion</span> <span class="gw-info" tabindex="0" aria-label="Info zu individuellen Funktionen">i<span class="gw-info-tip">Zum Beispiel Buchungssystem, Rechner, Terminvereinbarung, spezielle Formulare, Live-Anzeigen oder andere Sonderwünsche.</span></span></label>
+     <label class="gw-check" data-feature="Besondere / individuelle Funktion"><input type="checkbox" name="Funktionen" value="Besondere / individuelle Funktion"> <span class="gw-check-text">Besondere / individuelle Funktion</span> <span class="gw-info" tabindex="0" aria-label="Info zu individuellen Funktionen">i<span class="gw-info-tip">Eine zusätzliche, individuell abgestimmte Funktion – zum Beispiel Terminvereinbarung, spezielles Formular, Rechner oder eine andere Erweiterung. Umfang nach Absprache.</span></span></label>
     </div>
     <div class="gw-field"><label>Erzähl mir kurz von deinem Projekt</label><textarea name="Projektbeschreibung" placeholder="Was möchtest du mit deiner neuen Website erreichen? Gibt es besondere Wünsche?"></textarea></div>
    </div>
@@ -244,7 +244,7 @@ document.querySelectorAll('.external-site').forEach(function(btn){
  const packageIncludes={
   'Onepage':['Kontaktformular'],
   'Business Website':['Kontaktformular','Galerie','Team'],
-  'Business Plus':['Kontaktformular','Galerie','Team','News'],
+  'Business Plus':['Kontaktformular','Galerie','Team','News','Besondere / individuelle Funktion'],
   'Relaunch':[],
   'Noch nicht sicher':[]
  };
