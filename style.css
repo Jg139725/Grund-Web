@@ -77,18 +77,31 @@
 .project-taxi .project-overlay p{color:#ddd}
 @media(max-width:750px){.cards{grid-template-columns:1fr!important}.project-card{height:390px}.project-overlay h3{font-size:42px!important}}
 
-/* ===== GRUND WEB: Conversion & Vertrauen Update 2026-10 ===== */
-.hero .intro strong{color:#0c1830;font-weight:850}
-.gw-trust{padding:0 5%;background:#fff;border-bottom:1px solid #e8edf4}
-.gw-trust-wrap{max-width:1400px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #e8edf4}
-.gw-trust-wrap>div{padding:34px 32px;border-right:1px solid #e8edf4;display:grid;grid-template-columns:auto 1fr;column-gap:15px;align-items:start}
-.gw-trust b{color:#1476ff;font-size:11px;letter-spacing:.12em;padding-top:4px}
-.gw-trust strong{font-size:15px;color:#0c1830}
-.gw-trust span{grid-column:2;color:#687386;font-size:12px;line-height:1.55;margin-top:7px}
-.gw-package-list{list-style:none;padding:0;margin:22px 0 4px;border-top:1px solid #e4eaf2}
-.gw-package-list li{position:relative;padding:10px 0 10px 23px;border-bottom:1px solid #edf1f6;color:#445269;font-size:12px;line-height:1.45}
-.gw-package-list li:before{content:"✓";position:absolute;left:0;color:#1476ff;font-weight:900}
-.gw-package-small{display:block;color:#8792a3;font-size:10px;line-height:1.45;margin-top:9px}
-.gw-decision{padding:80px 5%;background:#fff;color:#0c1830;display:flex;align-items:center;justify-content:space-between;gap:50px;border-top:1px solid #e7edf5}
-.gw-decision>div{max-width:780px}.gw-decision h2{font-size:clamp(34px,4vw,58px);letter-spacing:-.055em;line-height:.98;margin:12px 0 20px}.gw-decision p:not(.over){max-width:680px;color:#667286;line-height:1.7;font-size:15px}.gw-decision>a{flex:0 0 auto;text-decoration:none;background:#1476ff;color:#fff;border-radius:8px;padding:17px 22px;font-size:13px;font-weight:850;box-shadow:0 12px 30px rgba(20,118,255,.18)}
-@media(max-width:850px){.gw-trust-wrap{grid-template-columns:1fr;border-left:0}.gw-trust-wrap>div{border-right:0;border-bottom:1px solid #e8edf4;padding:25px 5px}.gw-decision{align-items:flex-start;flex-direction:column;padding:65px 5%;gap:25px}}
+/* ===== 2026-10 Hero redesign ===== */
+@media (min-width:1001px){
+  .hero{min-height:620px;grid-template-columns:minmax(0,58%) minmax(360px,42%);background:#f8fbff;border-bottom:1px solid #e6edf5}
+  .copy{padding:78px 3.5vw 64px 6vw;display:flex;flex-direction:column;justify-content:center}
+  .copy .over{margin:0 0 26px}
+  .headline{width:auto;display:block;margin:0 0 28px;max-width:760px}
+  .headline div,.headline .blue{font-size:clamp(48px,4.25vw,70px);line-height:.88;transform:none!important;white-space:normal;letter-spacing:-.075em}
+  .headline div{display:inline}
+  .headline div br{display:none}
+  .headline div:after{display:none}
+  .headline div:not(:last-child)::after{content:" ";display:inline;height:auto;background:none;margin:0;transform:none}
+  .headline .blue{color:#1476ff}
+  .intro{max-width:680px;font-size:15px;line-height:1.65;margin:0;color:#45566c}
+  .buttons{margin-top:30px}
+  .buttons a{min-width:190px;padding:17px 20px}
+  .benefits{gap:22px;margin-top:27px;flex-wrap:wrap;font-size:10px}
+  .visual{clip-path:none;background:linear-gradient(145deg,#eaf3ff 0%,#b9d8ff 45%,#1673ee 100%);border-left:1px solid #d8e6f7}
+  .visual:before{display:none}
+  .visual:after{content:"GW";position:absolute;right:-4vw;top:35px;font-size:clamp(150px,18vw,300px);font-weight:900;font-style:italic;letter-spacing:-.12em;color:#fff;opacity:.14;z-index:0}
+  .beam{top:135px;left:-12%;width:130%;opacity:.8}
+  .laptop{width:min(500px,32vw);right:4.2vw;bottom:76px;transform:perspective(1200px) rotateY(-5deg) rotateZ(-1deg)}
+  .screen{height:auto;aspect-ratio:1.54/1;padding:26px}
+  .screen h3{font-size:clamp(27px,2.35vw,39px);margin:58px 0 8px}
+  .screen i{font-size:clamp(75px,7vw,115px)}
+}
+@media (min-width:1450px){.hero{grid-template-columns:minmax(0,61%) minmax(420px,39%)}.copy{padding-left:max(6vw,80px)}.laptop{right:3vw}}
+@media (max-width:1000px){.hero{background:linear-gradient(160deg,#fff 0,#f4f9ff 100%)}.copy{padding:70px 6vw}.headline{margin:28px 0}.headline div{font-size:clamp(42px,7vw,64px)}.intro{max-width:700px}.visual{display:none}}
+@media (max-width:650px){.copy{padding:52px 5vw 58px}.copy .over{margin-bottom:22px}.headline{gap:10px;margin:0 0 26px}.headline div,.headline .blue{font-size:clamp(42px,13vw,62px);transform:none!important;align-self:auto!important}.intro{font-size:14px}.benefits{gap:13px 18px;margin-top:25px}}
