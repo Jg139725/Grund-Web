@@ -3,60 +3,6 @@
 @media(max-width:650px){.topcta{padding:12px}.hero{min-height:auto}.copy{padding:55px 5vw}.headline{flex-direction:column;align-items:flex-start;gap:25px}.headline div{font-size:13vw}.headline .blue{align-self:center}.headline div:last-child{align-self:flex-end}.intro br{display:none}.buttons{flex-direction:column}.buttons a{width:100%}.benefits{display:grid;grid-template-columns:1fr 1fr}.projects{padding:55px 5vw}.cards,.cols{grid-template-columns:1fr}.section{padding:75px 5vw}.contact{display:block;padding:75px 5vw}.contact>a{margin-top:40px}footer{gap:20px;flex-wrap:wrap}}
 
 
-/* DEFINITIVER HERO-DESKTOP-FIX – keine alten Overrides mehr */
-@media (min-width:1001px){
-  .hero{
-    grid-template-columns:minmax(0,64%) minmax(0,36%);
-    min-height:585px;
-    overflow:hidden;
-  }
-  .copy{
-    padding:62px 1.5vw 30px 4.5vw;
-    position:relative;
-    z-index:5;
-  }
-  .headline{
-    width:60vw;
-    gap:1.15vw;
-    margin:35px 0 34px;
-  }
-  .headline div{
-    font-size:clamp(34px,3.35vw,54px);
-  }
-  .visual{
-    clip-path:none;
-    overflow:hidden;
-    position:relative;
-    background:linear-gradient(140deg,#dceafb 0%,#a9ceff 50%,#075dcf 100%);
-  }
-  .visual:before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(140deg,#dceafb 0%,#a9ceff 50%,#075dcf 100%);
-    clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);
-    z-index:0;
-  }
-  .beam{z-index:1;}
-  .laptop{
-    width:min(390px,25.5vw);
-    right:2.2vw;
-    bottom:30px;
-    transform:perspective(1200px) rotateY(-3deg) rotateZ(-.5deg);
-    z-index:3;
-  }
-  .screen{
-    height:255px;
-    padding:22px;
-  }
-  .screen h3{
-    font-size:28px;
-    margin:52px 0 7px;
-  }
-  .screen i{font-size:82px;top:75px;}
-}
-
-
 /* ===== GRUND WEB: echte Referenzen ===== */
 .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
 .project-card{height:430px;border-radius:12px;position:relative;overflow:hidden;display:block;padding:32px;color:#fff;box-shadow:0 18px 55px rgba(10,35,70,.13);transition:transform .35s ease,box-shadow .35s ease}
@@ -77,31 +23,62 @@
 .project-taxi .project-overlay p{color:#ddd}
 @media(max-width:750px){.cards{grid-template-columns:1fr!important}.project-card{height:390px}.project-overlay h3{font-size:42px!important}}
 
-/* ===== 2026-10 Hero redesign ===== */
-@media (min-width:1001px){
-  .hero{min-height:620px;grid-template-columns:minmax(0,58%) minmax(360px,42%);background:#f8fbff;border-bottom:1px solid #e6edf5}
-  .copy{padding:78px 3.5vw 64px 6vw;display:flex;flex-direction:column;justify-content:center}
-  .copy .over{margin:0 0 26px}
-  .headline{width:auto;display:block;margin:0 0 28px;max-width:760px}
-  .headline div,.headline .blue{font-size:clamp(48px,4.25vw,70px);line-height:.88;transform:none!important;white-space:normal;letter-spacing:-.075em}
-  .headline div{display:inline}
-  .headline div br{display:none}
-  .headline div:after{display:none}
-  .headline div:not(:last-child)::after{content:" ";display:inline;height:auto;background:none;margin:0;transform:none}
-  .headline .blue{color:#1476ff}
-  .intro{max-width:680px;font-size:15px;line-height:1.65;margin:0;color:#45566c}
-  .buttons{margin-top:30px}
-  .buttons a{min-width:190px;padding:17px 20px}
-  .benefits{gap:22px;margin-top:27px;flex-wrap:wrap;font-size:10px}
-  .visual{clip-path:none;background:linear-gradient(145deg,#eaf3ff 0%,#b9d8ff 45%,#1673ee 100%);border-left:1px solid #d8e6f7}
-  .visual:before{display:none}
-  .visual:after{content:"GW";position:absolute;right:-4vw;top:35px;font-size:clamp(150px,18vw,300px);font-weight:900;font-style:italic;letter-spacing:-.12em;color:#fff;opacity:.14;z-index:0}
-  .beam{top:135px;left:-12%;width:130%;opacity:.8}
-  .laptop{width:min(500px,32vw);right:4.2vw;bottom:76px;transform:perspective(1200px) rotateY(-5deg) rotateZ(-1deg)}
-  .screen{height:auto;aspect-ratio:1.54/1;padding:26px}
-  .screen h3{font-size:clamp(27px,2.35vw,39px);margin:58px 0 8px}
-  .screen i{font-size:clamp(75px,7vw,115px)}
+
+/* Responsive header, hero and project interactions. */
+html{scroll-padding-top:100px}
+section[id],#gwProjectForm{scroll-margin-top:100px}
+a:focus-visible,button:focus-visible{outline:3px solid #1476ff;outline-offset:5px}
+header{grid-template-columns:auto 1fr auto;gap:24px}
+header nav{justify-content:center;gap:clamp(14px,1.7vw,26px)}
+.menu-toggle{display:none;border:1px solid #d4deea;border-radius:6px;background:#fff;color:#08111e;padding:12px 14px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;align-items:center;gap:10px}
+.hero{grid-template-columns:minmax(0,58%) minmax(0,42%);min-height:580px;background:#f8fbff;border-bottom:1px solid #e6edf5}
+.copy{min-width:0;padding:64px 3.5vw 58px 6vw;display:flex;flex-direction:column;justify-content:center}
+.copy .over{margin:0 0 24px}
+.headline{display:block;width:auto;max-width:760px;margin:0 0 26px;font-size:clamp(40px,4.2vw,68px);font-weight:900;letter-spacing:-.055em;line-height:1.05}
+.headline span{display:block;overflow-wrap:anywhere}
+.headline .blue{color:#1476ff;transform:none}
+.intro{max-width:680px;font-size:15px;line-height:1.7;margin:0;color:#45566c}
+.intro br{display:none}
+.buttons{flex-wrap:wrap;margin-top:28px}
+.buttons a{min-width:0;min-height:48px;padding:16px 20px;gap:28px}
+.benefits{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:26px;font-size:12px;line-height:1.5}
+.visual{display:block;clip-path:none;overflow:hidden;min-width:0;border-left:1px solid #d8e6f7;background:linear-gradient(145deg,#eaf3ff,#b9d8ff 45%,#1673ee)}
+.beam{top:125px;left:-12%;width:130%;opacity:.8}
+.laptop{width:82%;max-width:500px;right:9%;bottom:76px;transform:perspective(1200px) rotateY(-5deg) rotateZ(-1deg)}
+.screen{height:auto;min-height:245px;aspect-ratio:1.54;padding:24px}
+.screen h3{font-size:clamp(24px,2.35vw,39px);margin:45px 0 8px}
+.screen i{font-size:clamp(75px,7vw,115px)}
+.screen-cta{display:inline-block;background:#1476ff;color:#fff;padding:10px 15px;border-radius:3px;font-size:12px}
+.project-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px}
+.project-details{font-size:12px;font-weight:800;display:inline-block;padding:10px 0;border-bottom:1px solid #ffffff88}
+#projekte .external-site{margin:0!important;min-height:44px;display:inline-flex!important;align-items:center}
+#projekte .project-overlay h3{overflow-wrap:anywhere}
+.gw-option{font:inherit;color:inherit;text-align:left}
+@media(max-width:1100px){
+ header{height:auto;min-height:76px;grid-template-columns:1fr auto auto;gap:16px;padding:16px 5vw}
+ header nav{display:flex;grid-column:1/-1;flex-wrap:wrap;justify-content:flex-start;gap:8px 18px}
+ header nav a{padding:12px 0}
+ header.nav-ready .menu-toggle{display:inline-flex}
+ header.nav-ready nav{display:none}
+ header.nav-ready.menu-open nav{display:flex}
+ .hero{grid-template-columns:1fr;min-height:auto;background:linear-gradient(160deg,#fff,#f4f9ff)}
+ .copy{padding:54px 6vw}
+ .headline{font-size:clamp(38px,6.5vw,64px);max-width:760px}
+ .visual{display:none}
 }
-@media (min-width:1450px){.hero{grid-template-columns:minmax(0,61%) minmax(420px,39%)}.copy{padding-left:max(6vw,80px)}.laptop{right:3vw}}
-@media (max-width:1000px){.hero{background:linear-gradient(160deg,#fff 0,#f4f9ff 100%)}.copy{padding:70px 6vw}.headline{margin:28px 0}.headline div{font-size:clamp(42px,7vw,64px)}.intro{max-width:700px}.visual{display:none}}
-@media (max-width:650px){.copy{padding:52px 5vw 58px}.copy .over{margin-bottom:22px}.headline{gap:10px;margin:0 0 26px}.headline div,.headline .blue{font-size:clamp(42px,13vw,62px);transform:none!important;align-self:auto!important}.intro{font-size:14px}.benefits{gap:13px 18px;margin-top:25px}}
+@media(max-width:520px){
+ header{grid-template-columns:1fr auto;gap:12px;min-height:72px}
+ header .topcta{display:none}
+ header nav{flex-direction:column;align-items:stretch;gap:0}
+ header nav a{padding:12px 8px;border-bottom:1px solid #e6edf5;min-height:44px}
+ .logo{font-size:17px;gap:8px}.logo span{font-size:24px}
+ .copy{padding:38px 5vw 42px}
+ .headline{font-size:clamp(32px,8.8vw,46px);line-height:1.1;letter-spacing:-.045em;margin-bottom:22px}
+ .buttons{flex-direction:column;gap:12px}.buttons a{width:100%}
+ .benefits{gap:10px 16px;font-size:11px}
+ #projekte .project-card{padding:24px!important}
+ #projekte .project-badge{right:20px!important;top:20px!important}
+ #projekte .project-overlay h3{font-size:clamp(32px,10.5vw,42px)!important;line-height:1!important}
+ .gw-nav{flex-wrap:wrap}.gw-submit{max-width:100%;flex:1;white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
