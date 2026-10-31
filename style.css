@@ -38,8 +38,58 @@
 .subpage-footer{align-items:center}
 /* Smartphone: Porträt nutzt die volle Breite */
 @media(max-width:600px){.gw-about-photo{max-width:none}}
-/* Projektseiten: echte Website-Ansicht statt Platzhalter */
-.project-page .project-shot{position:relative;margin:48px 0 0;padding:0 0 28px}
-.project-page .project-shot .desk{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(16,39,68,.16)}
-.project-page .project-shot .phone{position:absolute;right:3%;bottom:0;width:19%;min-width:92px;height:auto;border-radius:18px;border:5px solid #102744;box-shadow:0 18px 40px rgba(16,39,68,.28);background:#102744}
-@media(max-width:640px){.project-page .project-shot{margin-top:36px;padding-bottom:22px}.project-page .project-shot .phone{width:27%;border-width:4px;border-radius:14px}}
+/* Projektseiten: echte Website-Ansicht im Browser- und Handyrahmen */
+.project-page .project-shot{position:relative;margin:48px 0 0;padding:0 0 32px}
+.shot-desk{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;box-shadow:0 24px 60px rgba(16,39,68,.16)}
+.shot-bar{height:34px;display:flex;align-items:center;gap:6px;padding:0 14px;background:#f0f5fb;border-bottom:1px solid var(--line)}
+.shot-bar i{width:8px;height:8px;border-radius:50%;background:#c3d2e5;flex:none}
+.shot-bar span{margin:0 auto;font-size:11px;color:#61758e;background:#fff;border:1px solid #dfe7f2;border-radius:5px;padding:2px 28px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.shot-view{position:relative;overflow:hidden;background:#f0f5fb}
+.shot-desk .shot-view{aspect-ratio:16/10}
+.shot-view img{display:block;width:100%;height:auto}
+.shot-phone{position:absolute;right:3%;bottom:0;width:19%;min-width:92px;border:6px solid #102744;border-radius:24px;background:#102744;box-shadow:0 18px 40px rgba(16,39,68,.28)}
+.shot-phone .shot-view{aspect-ratio:390/844;border-radius:17px}
+@media(max-width:640px){.project-page .project-shot{margin-top:36px;padding-bottom:24px}.shot-bar{height:26px;padding:0 10px}.shot-bar i{width:6px;height:6px}.shot-bar span{font-size:9px;padding:1px 14px}.shot-phone{width:27%;border-width:4px;border-radius:16px}.shot-phone .shot-view{border-radius:11px}}
+
+/* ===== Animationen (nur mit .motion, also ohne „Bewegung reduzieren“) ===== */
+@keyframes gw-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes gw-pop{from{opacity:0;transform:translateY(40px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes gw-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes gw-shine{from{transform:translateX(-120%) skewX(-20deg)}to{transform:translateX(320%) skewX(-20deg)}}
+@keyframes shot-scroll{0%,8%{transform:translateY(0)}46%,56%{transform:translateY(var(--end,0))}94%,100%{transform:translateY(0)}}
+/* Hero: Aufbau beim Laden */
+.motion .hero .over,.motion .headline>span,.motion .hero .intro,.motion .hero .buttons,.motion .hero .benefits{animation:gw-rise .9s cubic-bezier(.2,.7,.2,1) both}
+.motion .headline>span:nth-child(1){animation-delay:.08s}
+.motion .headline>span:nth-child(2){animation-delay:.2s}
+.motion .headline>span:nth-child(3){animation-delay:.32s}
+.motion .hero .intro{animation-delay:.46s}
+.motion .hero .buttons{animation-delay:.58s}
+.motion .hero .benefits{animation-delay:.7s}
+.motion .hero-preview .preview-browser{animation:gw-rise 1s .3s cubic-bezier(.2,.7,.2,1) both}
+.motion .hero-preview .preview-phone{animation:gw-pop .9s .75s cubic-bezier(.2,.8,.2,1.15) both,gw-float 6s 1.7s ease-in-out infinite}
+.motion .hero-preview figcaption{animation:gw-rise .8s 1s both}
+/* Hero: Neigung und Tiefe mit der Maus (Werte aus motion.js) */
+.motion .hero-preview{perspective:1600px}
+.motion .hero-preview .preview-browser{rotate:y var(--tilt-x,0deg);translate:var(--shift-x,0px) var(--shift-y,0px);transition:rotate .6s ease-out,translate .6s ease-out}
+.motion .hero-preview .preview-phone{translate:calc(var(--shift-x,0px) * -1.6) calc(var(--shift-y,0px) * -1.8);transition:translate .6s ease-out}
+.motion .buttons a{transition:transform .2s,box-shadow .2s,background .2s}
+.motion .buttons a:hover{transform:translateY(-2px);box-shadow:0 12px 26px #1a5fd12e}
+.motion .buttons a b{display:inline-block;transition:transform .25s}
+.motion .buttons a:hover b{transform:translateX(4px)}
+.motion .buttons .primary{position:relative;overflow:hidden}
+.motion .buttons .primary:after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,#ffffff59,transparent);transform:translateX(-120%) skewX(-20deg);animation:gw-shine 1.1s 1.6s ease-out 1 both;pointer-events:none}
+/* Scroll-Reveals (Klassen setzt motion.js) */
+.motion .rv{opacity:0;translate:0 28px;transition:opacity .85s cubic-bezier(.2,.7,.2,1) var(--rv-d,0ms),translate .85s cubic-bezier(.2,.7,.2,1) var(--rv-d,0ms),transform .25s,box-shadow .25s,border-color .15s,background .15s}
+.motion .rv.in{opacity:1;translate:none}
+/* Projektkarten: echte Website im Hintergrund */
+.project-peek{position:absolute;z-index:-1;top:86px;right:-7%;width:66%;height:auto;border-radius:10px;opacity:.42;box-shadow:0 24px 50px rgba(0,0,0,.45);transform:perspective(1300px) rotateY(-16deg) rotateX(7deg) rotate(-2deg);transform-origin:100% 0;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 88%);mask-image:linear-gradient(180deg,#000 30%,transparent 88%);pointer-events:none;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.project-card:hover .project-peek,.project-card:focus-within .project-peek{transform:perspective(1300px) rotateY(-6deg) rotateX(2deg) rotate(0) translateY(-10px);opacity:.62}
+.project-card .project-details,.project-card .external-site{transition:transform .2s,background .2s}
+.project-card .external-site:hover{transform:translateY(-2px)}
+@media(max-width:600px){.project-peek{top:70px;right:-14%;width:82%;opacity:.3}}
+/* Projektseiten: Screenshot scrollt durch die Website */
+.motion .project-shot.is-ready .shot-view img{animation:shot-scroll var(--dur,26s) cubic-bezier(.45,0,.55,1) infinite;animation-play-state:paused;will-change:transform}
+.motion .project-shot.is-ready .shot-phone img{--dur:22s;animation-delay:-1.5s}
+.motion .project-shot.is-playing .shot-view img{animation-play-state:running}
+.motion .project-shot .shot-view:hover img{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.project-peek{transition:none}}
