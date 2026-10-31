@@ -31,3 +31,15 @@
 
 /* Existing G monogram from the Grund Web wallpaper. */
 .logo .brand-word-web{font-style:normal;color:var(--blue)}.footer-brand{font-size:14px;gap:10px}.footer-brand .brand-mark{width:32px;height:32px;flex-basis:32px}.preview-nav b{display:inline-flex;align-items:center;gap:5px}.preview-mark{width:16px;height:16px;object-fit:contain}.preview-phone small{display:flex;align-items:center;gap:4px}.phone-mark{width:12px;height:12px;object-fit:contain}.thankyou-brand{margin-bottom:20px}.legal-head a.logo{display:inline-flex}
+
+/* Footer: Logo-Zeichen und Schriftzug nebeneinander wie im Header */
+.site-footer .footer-brand{display:inline-flex;align-items:center;gap:10px}
+/* Unterseiten-Footer: Trennpunkt mittig zu den Links */
+.subpage-footer{align-items:center}
+/* Smartphone: Porträt nutzt die volle Breite */
+@media(max-width:600px){.gw-about-photo{max-width:none}}
+/* Projektseiten: echte Website-Ansicht statt Platzhalter */
+.project-page .project-shot{position:relative;margin:48px 0 0;padding:0 0 28px}
+.project-page .project-shot .desk{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(16,39,68,.16)}
+.project-page .project-shot .phone{position:absolute;right:3%;bottom:0;width:19%;min-width:92px;height:auto;border-radius:18px;border:5px solid #102744;box-shadow:0 18px 40px rgba(16,39,68,.28);background:#102744}
+@media(max-width:640px){.project-page .project-shot{margin-top:36px;padding-bottom:22px}.project-page .project-shot .phone{width:27%;border-width:4px;border-radius:14px}}
